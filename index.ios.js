@@ -12,6 +12,11 @@ import {
   View
 } from 'react-native';
 
+import { Sentry } from 'react-native-sentry';
+
+Sentry.config('https://3c29a7e685944426b5654e7ee473e6da@sentry.io/1259823').install();
+
+
 export default class rnGo47 extends Component {
   render() {
     return (

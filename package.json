@@ -6,12 +6,13 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"key": "keytool -genkey -v -keystore rnGo47-key.keystore -alias rnGo47-alias -keyalg RSA -keysize 2048 -validity 10000",
 		"build": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ../",
-		"install": "cd android && ./gradlew clean && ./gradlew installRelease && cd ../",
+		"build:install": "cd android && ./gradlew clean && ./gradlew installRelease && cd ../",
 		"test": "jest"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
-		"react-native": "0.47.2"
+		"react-native": "0.47.2",
+		"react-native-sentry": "0.38.2"
 	},
 	"devDependencies": {
 		"babel-jest": "23.4.2",
