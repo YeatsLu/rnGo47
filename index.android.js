@@ -14,15 +14,16 @@ import {
   ToastAndroid
 } from 'react-native';
 
-export default class rnGo47 extends Component {
-  _errorStack() {
-    try {
-      throw new Error('The position of error')
-    } catch (e) {
-      console.log('-------error-stack------', e.stack);
-      ToastAndroid.show(e.stack.split('\n')[0], ToastAndroid.LONG, ToastAndroid.CENTER)
-    }
 
+export default class rnGo47 extends Component {
+  _catchErrorStack() {
+    try {
+      throw new Error('catch-error');
+    } catch (e) {
+      console.log('-------catch-error-stack------', console.trace(e.stack));
+      ToastAndroid.show(e.stack.split('\n')[0], ToastAndroid.LONG, ToastAndroid.CENTER)
+      throw e
+    }
   }
   render() {
     return (
@@ -30,7 +31,8 @@ export default class rnGo47 extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!fasfwefew
         </Text>
-        <Button title="Error-Stack-2" onPress={ this._errorStack }></Button>
+        <Button title="_catchErrorStack" onPress={ this._catchErrorStack }></Button>
+        <Text style={{ height: 20 }}/>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
