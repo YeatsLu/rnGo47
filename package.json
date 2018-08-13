@@ -6,7 +6,7 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"key": "keytool -genkey -v -keystore rnGo47-key.keystore -alias rnGo47-alias -keyalg RSA -keysize 2048 -validity 10000",
 		"build": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ../",
-		"install": "cd android && ./gradlew clean && ./gradlew installRelease && cd ../",
+		"build:install": "cd android && ./gradlew clean && ./gradlew installRelease && cd ../",
 		"test": "jest"
 	},
 	"dependencies": {
